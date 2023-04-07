@@ -1,9 +1,9 @@
 {
-  "name": "computost-consulting",
+  "name": "computost-website",
   "version": "1.0.0",
   "private": true,
-  "description": "computost-consulting",
-  "author": "Melody Universe",
+  "description": "Official website for Computost Consulting",
+  "author": "Computost Consulting",
   "keywords": [
     "gatsby"
   ],
