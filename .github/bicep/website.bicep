@@ -1,8 +1,9 @@
-param repositoryUrl string
 param location string = resourceGroup().location
+param repositoryUrl string
+param siteName string
 
 resource site 'Microsoft.Web/staticSites@2022-03-01' = {
-  name: 'stapp-computost-website'
+  name: siteName
   location: location
   sku: {
     tier: 'Free'
@@ -13,5 +14,3 @@ resource site 'Microsoft.Web/staticSites@2022-03-01' = {
     branch: 'main'
   }
 }
-
-output siteName string = site.name
