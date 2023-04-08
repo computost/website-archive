@@ -6,8 +6,9 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches: [main]
 permissions:
-  issues: write
   contents: read
+  id-token: write
+  issues: write
 jobs:
   ci-cd:
     if: >
