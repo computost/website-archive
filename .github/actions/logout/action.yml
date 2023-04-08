@@ -1,0 +1,11 @@
+name: logout
+description: logs out of Azure, making sure to clear cache
+runs:
+  using: composite
+  steps:
+    - uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az logout
+          az cache purge
+          az account clear
