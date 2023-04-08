@@ -14,16 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - run: npm ci
-      - run: npm run build
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18.x
+      # - run: npm ci
+      # - run: npm run build
       - uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          subscription-id: ${{ secrest.AZURE_SUBSCRIPTION_ID }}
-          tenant-id: ${{ secrest.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      - name: deploy bicep
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: rg-computost-website
+          template: .github/bicep/website.bicep
+          parameters: >
+            repositoryUrl=${{ github.repositoryUrl }}
+            repositoryToken=${{ github.token }}
       - name: logout
         uses: azure/CLI@v1
         with:
