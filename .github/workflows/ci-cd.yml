@@ -52,11 +52,12 @@ jobs:
       - name: upload site
         uses: Azure/static-web-apps-deploy@v1
         with:
+          action: upload
           azure_static_web_apps_api_token: ${{ steps.get-deployment-token.outputs.token }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: upload
-          production-branch: main
           output_location: public
+          production_branch: main
+          skip_app_build: true
       - name: logout
         uses: azure/CLI@v1
         with:
