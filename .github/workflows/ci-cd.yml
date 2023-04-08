@@ -32,7 +32,6 @@ jobs:
           template: .github/bicep/website.bicep
           parameters: >
             repositoryUrl=${{ github.server_url }}/${{ github.repository }}
-            repositoryToken=${{ github.token }}
       - name: logout
         uses: azure/CLI@v1
         with:

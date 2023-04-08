@@ -1,6 +1,4 @@
 param repositoryUrl string
-@secure()
-param repositoryToken string
 param location string = resourceGroup().location
 
 resource site 'Microsoft.Web/staticSites@2022-09-01' = {
@@ -13,6 +11,5 @@ resource site 'Microsoft.Web/staticSites@2022-09-01' = {
   properties: {
     repositoryUrl: repositoryUrl
     branch: 'main'
-    repositoryToken: repositoryToken
   }
 }
