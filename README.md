@@ -44,6 +44,10 @@
 
 ## Setup
 
+This section is only required for the initial deployment of this website and is currently maintained for historical documentation. A few steps need to be manually carried out in order to fully provision this static website.
+
+### Azure
+
 This project includes the files necessary to create preliminary resources before deploying the static web app and other auxiliary resources.
 
 1. Manually run a Bicep deployment using [.github/bicep/setup.bicep](./.github/bicep/setup.bicep). Open the deployment overview page in a browser.
@@ -51,3 +55,10 @@ This project includes the files necessary to create preliminary resources before
    - **AZURE_CLIENT_ID**: ID of the `id-computost-website-deployment-service` managed identity
    - **AZURE_SUBSCRIPTION_ID**: Can be found from the overview of the managed identity
    - **AZURE_TENANT_ID**: Can be found from the JSON view of the managed identity
+
+### Porkbun
+
+We have chosen to use [Porkbun](https://porkbun.com) as our domain registrar. After creating a Porkbun account and purchasing our domain, we needed to configure our GitHub repo to be able to authenticate with the Porkbun API.
+
+1. Follow the [steps to generate an API key](https://kb.porkbun.com/article/190-getting-started-with-the-porkbun-api) for the domain.
+2. Create new environment secrets in GitHub under the _prod_ environment called **PORKBUN_API_KEY** and **PORKBUN_SECRET_KEY** and paste the keys generated from Porkbun into those secrets.
