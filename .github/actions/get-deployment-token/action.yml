@@ -3,7 +3,9 @@ description: >
   Uses the Azure CLI to retrieve the deployment token for a Static Web App.
   Must call azure/login before calling this action.
 inputs:
-  site-name: Name of the website for which to retrieve a deployment token.
+  site-name:
+    description: Name of the website for which to retrieve a deployment token.
+    required: true
 outputs:
   token:
     description: Deployment token for the specified Static Web App
