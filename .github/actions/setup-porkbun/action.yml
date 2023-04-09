@@ -1,0 +1,18 @@
+name: setup-porkbun
+description: Creates required DNS records in Porkbun.
+inputs:
+  api-key:
+    description: API key for authenticating to Porkbun
+    required: true
+  secret-key:
+    description: Secret key for authenticating to Porkbun
+    required: true
+  default-hostname:
+    description: Default hostname of the Static Web App
+    required: true
+  domain-name:
+    description: Domain to add to the Static Web App
+    required: true
+runs:
+  using: node18
+  main: main.js

@@ -11,6 +11,7 @@ permissions:
   issues: write
   pull-requests: write
 env:
+  DOMAIN_NAME: computost.com
   SITE_NAME: stapp-computost-website
 jobs:
   ci-cd:
@@ -56,16 +57,17 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           production_branch: main
           skip_app_build: true
+      - uses: ./.github/actions/setup-porkbun
+        if: >
+          github.event_name == 'push' &&
+          github.ref == 'refs/heads/main'
+        with:
+          api-key: ${{ secrets.PORKBUN_API_KEY }}
+          secret-key: ${{ secrets.PORKBUN_SECRET_KEY }}
+          default-hostname: ${{ steps.bicep.outputs.defaultHostname }}
+          domain-name: ${{ env.DOMAIN_NAME }}
       - uses: ./.github/actions/logout
         if: always()
-  dns:
-    if: >
-      github.event_name == 'push' &&
-      github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment: prod
-    steps:
-      -
   close_pr:
     if: >
       github.event_name == 'pull_request' &&
