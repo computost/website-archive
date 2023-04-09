@@ -2,7 +2,7 @@ param(
   [Parameter(Mandatory=$true)][string]$ApiKey,
   [Parameter(Mandatory=$true)][string]$SecretKey,
   [Parameter(Mandatory=$true)][string]$DefaultHostname,
-  [Parameter(Mandatory=$true)][string]$DomainName,
+  [Parameter(Mandatory=$true)][string]$DomainName
 )
 
 $BASE_URL = "https://porkbun.com/api/json/v3"
