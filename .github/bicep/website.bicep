@@ -14,5 +14,3 @@ resource site 'Microsoft.Web/staticSites@2022-03-01' = {
     branch: 'main'
   }
 }
-
-output defaultHostname string = site.properties.defaultHostname
