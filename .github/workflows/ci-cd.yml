@@ -29,6 +29,15 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      - uses: ./.github/actions/setup-porkbun-www
+        if: >
+          github.event_name == 'push' &&
+          github.ref == 'refs/heads/main'
+        with:
+          api-key: ${{ secrets.PORKBUN_API_KEY }}
+          secret-key: ${{ secrets.PORKBUN_SECRET_KEY }}
+          default-hostname: ${{ steps.bicep.outputs.defaultHostname }}
+          domain-name: ${{ env.DOMAIN_NAME }}
       - name: deploy bicep
         id: bicep
         uses: azure/arm-deploy@v1
@@ -58,15 +67,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           production_branch: main
           skip_app_build: true
-      - uses: ./.github/actions/setup-porkbun
-        if: >
-          github.event_name == 'push' &&
-          github.ref == 'refs/heads/main'
-        with:
-          api-key: ${{ secrets.PORKBUN_API_KEY }}
-          secret-key: ${{ secrets.PORKBUN_SECRET_KEY }}
-          default-hostname: ${{ steps.bicep.outputs.defaultHostname }}
-          domain-name: ${{ env.DOMAIN_NAME }}
       - uses: ./.github/actions/logout
         if: always()
   close_pr:
