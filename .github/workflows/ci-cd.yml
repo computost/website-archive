@@ -37,6 +37,7 @@ jobs:
           resourceGroupName: rg-computost-website
           template: .github/bicep/website.bicep
           parameters: >
+            domainName=${{ env.DOMAIN_NAME }}
             repositoryUrl=${{ github.server_url }}/${{ github.repository }}
             siteName=${{ env.SITE_NAME }}
       - id: get-deployment-token
