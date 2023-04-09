@@ -56,9 +56,9 @@ This project includes the files necessary to create preliminary resources before
    - **AZURE_SUBSCRIPTION_ID**: Can be found from the overview of the managed identity
    - **AZURE_TENANT_ID**: Can be found from the JSON view of the managed identity
 
-### Porkbun
+### Custom Domains
 
-We have chosen to use [Porkbun](https://porkbun.com) as our domain registrar. After creating a Porkbun account and purchasing our domain, we needed to configure our GitHub repo to be able to authenticate with the Porkbun API.
+Currently, end-to-end automation for creating custom domains for Static Web Apps is unsupported. After the site is provisioned, manually carry out the steps described in the articles below:
 
-1. Follow the [steps to generate an API key](https://kb.porkbun.com/article/190-getting-started-with-the-porkbun-api) for the domain.
-2. Create new environment secrets in GitHub under the _prod_ environment called **PORKBUN_API_KEY** and **PORKBUN_SECRET_KEY** and paste the keys generated from Porkbun into those secrets.
+- [Set up a custom domain in Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/custom-domain-external)
+- [Set up an apex domain in Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/apex-domain-external)
