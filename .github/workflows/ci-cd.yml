@@ -19,8 +19,6 @@ jobs:
       github.event_name == 'push' ||
       (github.event_name == 'pull_request' && github.event.action != 'closed')
     environment: prod
-    outputs:
-      siteUrl: ${{ steps.bicep.outputs.siteUrl }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,25 +27,38 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-      - uses: ./.github/actions/setup-porkbun-www
-        if: >
-          github.event_name == 'push' &&
-          github.ref == 'refs/heads/main'
-        with:
-          api-key: ${{ secrets.PORKBUN_API_KEY }}
-          secret-key: ${{ secrets.PORKBUN_SECRET_KEY }}
-          default-hostname: ${{ steps.bicep.outputs.defaultHostname }}
-          domain-name: ${{ env.DOMAIN_NAME }}
-      - name: deploy bicep
-        id: bicep
+      - name: provision website
+        id: website
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: rg-computost-website
           template: .github/bicep/website.bicep
           parameters: >
-            domainName=${{ env.DOMAIN_NAME }}
             repositoryUrl=${{ github.server_url }}/${{ github.repository }}
+            siteName=${{ env.SITE_NAME }}
+      - name: Setup Porkbun
+        shell: pwsh
+        run: |
+          & ./.github/pwsh/Setup-Porkbun.ps1 `
+            -ApiKey ${{ secrets.PORKBUN_API_KEY }} `
+            -SecretKey ${{ secrets.PORKBUN_SECRET_KEY }} `
+            -DefaultHostname ${{ steps.website.outputs.defaultHostname }} `
+            -DomainName ${{ env.DOMAIN_NAME }}
+        if: >
+          github.event_name == 'push' &&
+          github.ref == 'refs/heads/main'
+      - name: create custom domains
+        uses: azure/arm-deploy@v1
+        if: >
+          github.event_name == 'push' &&
+          github.ref == 'refs/heads/main'
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: rg-computost-website
+          template: .github/bicep/custom-domains.bicep
+          parameters: >
+            domainName=${{ env.DOMAIN_NAME }}
             siteName=${{ env.SITE_NAME }}
       - id: get-deployment-token
         uses: ./.github/actions/get-deployment-token
