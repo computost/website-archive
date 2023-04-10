@@ -11,7 +11,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   jsxRuntime: "automatic",
   plugins: [
-    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [],
+      },
+    },
     "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",
@@ -20,6 +25,18 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Computost Consulting",
+        short_name: "Computost",
+        start_url: "/",
+        background_color: "#fcecd1",
+        theme_color: "#211500",
+        display: "browser",
+        icon: "src/images/icon.png",
+      },
     },
   ],
 };
