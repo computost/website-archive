@@ -25,30 +25,78 @@ const IndexPage: FC<PageProps> = () => {
       <main style={{ padding: 8 }}>
         <article>
           <h2>About Us</h2>
-          <ul>
-            <li>Small team</li>
-            <li>Average 15 years working with Dynamics</li>
-          </ul>
+          <p>
+            We are a small team of software engineering consultants who
+            specialize in Power Platform and Azure technologies. Our team
+            members have an average of 15 years of experience working with Power
+            Platform and Microsoft technologies. In our careers, we have helped
+            build large, enterprise projects or provide guidance to small teams
+            with simple goals.
+          </p>
         </article>
         <article>
           <h2>Our Principals</h2>
           <ul>
-            <li>Quality</li>
-            <li>Continuous communication</li>
-            <li>Build with support in mind</li>
-            <li>Flexibility</li>
+            <li>
+              <b>Quality:</b>
+              If anything is worth doing, it's worth doing right. No job is
+              finished until it meets our standards of documentation, styling,
+              testing, and deployability.
+            </li>
+            <li>
+              <b>Communication:</b>
+              We code in an open kitchen. Everything we make, our customers have
+              access to it at all times.
+            </li>
+            <li>
+              <b>Maintainability:</b>
+              As solution architects, we build everything with support in mind.
+            </li>
+            <li>
+              <b>Flexibility:</b>
+              Your technical solutions should grow with your business. We
+              deliver value in frequent, small intervals, continuing to reassess
+              what you need after each delivery.
+            </li>
           </ul>
         </article>
         <article>
           <h2>Technologies</h2>
           <ul>
-            <li>Dataverse</li>
-            <li>Azure</li>
-            <li>GitHub</li>
+            <li>
+              <b>Power Platform</b>
+              <ul>
+                <li>Power Apps</li>
+                <li>Power Automate</li>
+                <li>Power Pages</li>
+              </ul>
+            </li>
+            <li>
+              <b>Azure</b>
+              <ul>
+                <li>Data Factory</li>
+                <li>Function Apps</li>
+                <li>Service Bus</li>
+                <li>SQL</li>
+              </ul>
+            </li>
+            <li>
+              <b>DevOps</b>
+              <ul>
+                <li>Azure DevOps</li>
+                <li>GitHub</li>
+                <li>GitLab</li>
+              </ul>
+            </li>
           </ul>
         </article>
         <article>
           <h2>Projects</h2>
+          <p>
+            While we work with customers, we often innovate tools that can
+            provide value for the larger software development community. Below
+            are some of the tools we have created and actively maintain:
+          </p>
           <ul>
             <li>
               <a href="https://github.com/computost/org-compare">org-compare</a>
