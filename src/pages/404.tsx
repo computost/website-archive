@@ -1,3 +1,5 @@
+// This file was from the Gatsby website
+
 import { Link, HeadFC, PageProps } from "gatsby";
 import { FC } from "react";
 

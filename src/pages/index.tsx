@@ -1,3 +1,5 @@
+// This file was from the Gatsby website
+
 import type { HeadFC, PageProps } from "gatsby";
 import { FC } from "react";
 import Icon from "../images/icon.svg";
