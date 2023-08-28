@@ -1,5 +1,3 @@
-/* This file was from the Gatsby website */
-
 html {
   background-color: #fcecd1;
   color: #211500;
@@ -9,4 +7,8 @@ html {
 
 body {
   margin: 0;
+}
+
+a:link {
+  text-decoration: none;
 }

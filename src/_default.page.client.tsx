@@ -1,21 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM, { Root } from "react-dom/client";
 import "./global.css";
 import { PageContext } from "./types";
+import { HelmetProvider } from "react-helmet-async";
 
 export const clientRouting = true;
 
-let root: ReactDOM.Root;
-export const render = ({
-  exports,
-  isHydration,
-  Page,
-  pageProps,
-}: PageContext) => {
+let root: Root;
+export const render = ({ isHydration, Page, pageProps }: PageContext) => {
   const container = document.getElementById("root")!;
   const page = (
     <React.StrictMode>
-      <Page {...pageProps} />
+      <HelmetProvider>
+        <Page {...pageProps} />
+      </HelmetProvider>
     </React.StrictMode>
   );
   if (isHydration) {
@@ -26,6 +24,4 @@ export const render = ({
     }
     root.render(page);
   }
-  console.log(exports);
-  document.title = exports.title ?? "Computost Consulting";
 };

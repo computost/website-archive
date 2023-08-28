@@ -1,16 +1,28 @@
 import ReactDOMServer from "react-dom/server";
 import { dangerouslySkipEscape } from "vite-plugin-ssr/server";
 import { PageContext } from "./types";
-import template from "./index.html?raw";
+import { Template } from "./Template";
+import { FilledContext, Helmet, HelmetProvider } from "react-helmet-async";
 
 export const passToClient = ["documentProps", "pageProps"];
-export const render = ({ exports, Page, pageProps }: PageContext) => ({
-  documentHtml: dangerouslySkipEscape(
-    template
-      .replace("{TITLE}", exports.title ?? "Computost Consulting")
-      .replace("{PAGE}", ReactDOMServer.renderToString(<Page {...pageProps} />))
-  ),
-  pageContext: {
-    exports,
-  },
-});
+
+export const render = ({ Page, pageProps }: PageContext) => {
+  const helmetContext: FilledContext = {} as FilledContext;
+  const page = ReactDOMServer.renderToString(
+    <HelmetProvider context={helmetContext}>
+      <Helmet>
+        <title>Computost Consulting</title>
+      </Helmet>
+      <Page {...pageProps} />
+    </HelmetProvider>
+  );
+  return {
+    documentHtml: dangerouslySkipEscape(
+      "<!DOCTYPE html>\n" +
+        ReactDOMServer.renderToString(
+          <Template contents={page} helmet={helmetContext.helmet} />
+        )
+    ),
+    pageContext: { helmetContext },
+  };
+};
