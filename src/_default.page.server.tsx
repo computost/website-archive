@@ -18,10 +18,9 @@ export const render = ({ Page, pageProps }: PageContext) => {
   );
   return {
     documentHtml: dangerouslySkipEscape(
-      "<!DOCTYPE html>\n" +
-        ReactDOMServer.renderToString(
-          <Template contents={page} helmet={helmetContext.helmet} />
-        )
+      `<!DOCTYPE html>${ReactDOMServer.renderToString(
+        <Template contents={page} helmet={helmetContext.helmet} />
+      )}`
     ),
     pageContext: { helmetContext },
   };

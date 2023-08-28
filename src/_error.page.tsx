@@ -1,2 +1,10 @@
-export const Page = () => <h1>Page not found</h1>;
-export const title = "Not Found";
+import { Helmet } from "react-helmet-async";
+
+export const Page = () => (
+  <>
+    <Helmet>
+      <title>Computost Consulting - Not Found</title>
+    </Helmet>
+    <h1>Page not found</h1>
+  </>
+);

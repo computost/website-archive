@@ -38,9 +38,11 @@ export const Template: FunctionComponent<{
             Computost Consulting
           </a>
         </h1>
-        <main style={{ padding: 8 }}>
-          <div id="root" dangerouslySetInnerHTML={{ __html: contents }} />
-        </main>
+        <main
+          style={{ padding: 8 }}
+          id="root"
+          dangerouslySetInnerHTML={{ __html: contents }}
+        />
       </body>
     </html>
   );

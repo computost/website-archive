@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM, { Root } from "react-dom/client";
+import { StrictMode } from "react";
+import { Root, createRoot, hydrateRoot } from "react-dom/client";
 import "./global.css";
 import { PageContext } from "./types";
 import { HelmetProvider } from "react-helmet-async";
@@ -10,17 +10,17 @@ let root: Root;
 export const render = ({ isHydration, Page, pageProps }: PageContext) => {
   const container = document.getElementById("root")!;
   const page = (
-    <React.StrictMode>
+    <StrictMode>
       <HelmetProvider>
         <Page {...pageProps} />
       </HelmetProvider>
-    </React.StrictMode>
+    </StrictMode>
   );
   if (isHydration) {
-    root = ReactDOM.hydrateRoot(container, page);
+    root = hydrateRoot(container, page);
   } else {
     if (!root) {
-      root = ReactDOM.createRoot(container);
+      root = createRoot(container);
     }
     root.render(page);
   }
