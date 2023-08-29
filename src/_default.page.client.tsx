@@ -3,6 +3,7 @@ import { Root, createRoot, hydrateRoot } from "react-dom/client";
 import "./global.css";
 import { PageContext } from "./types";
 import { HelmetProvider } from "react-helmet-async";
+import { Template } from "./Template";
 
 export const clientRouting = true;
 
@@ -12,7 +13,9 @@ export const render = ({ isHydration, Page, pageProps }: PageContext) => {
   const page = (
     <StrictMode>
       <HelmetProvider>
-        <Page {...pageProps} />
+        <Template>
+          <Page {...pageProps} />
+        </Template>
       </HelmetProvider>
     </StrictMode>
   );
