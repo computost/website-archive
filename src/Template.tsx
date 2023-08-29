@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
 import { ReactComponent as ComputostLogo } from "./assets/computost.svg";
 import { HelmetServerState } from "react-helmet-async";
+import { AppBar, Box, IconButton, Toolbar, Typography }  from '@mui/material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 
 export const Template: FunctionComponent<{
   contents: string;
@@ -15,29 +17,28 @@ export const Template: FunctionComponent<{
         <>{helmet.title.toComponent()}</>
       </head>
       <body>
-        <h1
-          style={{
-            alignItems: "center",
-            backgroundColor: "#211500",
-            display: "flex",
-            fontSize: "1.75em",
-            margin: 0,
-            padding: 8,
-          }}
-        >
-          <ComputostLogo
-            title="Computost Consulting"
-            style={{ fill: "#fcecd1", height: "1em", marginRight: "0.25em" }}
-          />
-          <a
-            href="/"
-            style={{
-              color: "#fcecd1",
-            }}
-          >
-            Computost Consulting
-          </a>
-        </h1>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              <ComputostLogo
+                title="Computost Consulting"
+                style={{ fill: "#fcecd1", height: "1em", marginRight: "0.25em" }}
+              />
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Computost Consulting
+              </Typography>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+        </Box>
         <main
           style={{ padding: 8 }}
           id="root"
