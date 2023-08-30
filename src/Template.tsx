@@ -56,7 +56,6 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
                 onClick={() => {setOpen(true)}}
               >
                 <Menu />

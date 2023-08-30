@@ -16,9 +16,9 @@ import { Helmet } from "react-helmet-async";
 export const Page = () => {
   const blogPosts = [
     {
-      name: "Blog Post 1",
-      description: "This is the description for blog post 1",
-      ref: "/blogs/blogPost1",
+      name: "Helpful Dataverse Queries",
+      description: "A collection of helpful Dataverse Fetch XML queries",
+      ref: "/blogs/helpful-dataverse-queries",
     },
     {
       name: "Blog Post 2",
@@ -52,7 +52,7 @@ export const Page = () => {
             >
               {blogPosts.map((item, index) => (
                 <Grid item direction={"row"} key={index}>
-                  <Card sx={{ maxWidth: 345 }}>
+                  <Card sx={{ width: 345, height: 300 }}>
                     <CardMedia
                       sx={{ height: 140 }}
                       image="/src/assets/computost.svg"
@@ -62,7 +62,7 @@ export const Page = () => {
                       <Typography gutterBottom variant="h5" component="div">
                         {item.name}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" sx={{height: 40}}>
                         {item.description}
                       </Typography>
                     </CardContent>
