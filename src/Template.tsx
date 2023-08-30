@@ -40,7 +40,7 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
                 style={{
                   fill: "#fcecd1",
                   height: "2em",
-                  marginRight: "0.25em",
+                  marginRight: "0.75em",
                 }}
               />
               <Typography
