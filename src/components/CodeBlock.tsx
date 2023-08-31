@@ -11,7 +11,14 @@ const CodeBlock: FunctionComponent<{
 }> = ({ code, language, languageName }) => {
   hljs.registerLanguage(languageName, language);
   return (
-    <pre style={{ border: "1px solid black" }}>
+    <pre
+      style={{
+        border: "1px solid black",
+        margin: "auto",
+        marginTop: "1em",
+        width: "fit-content",
+      }}
+    >
       <code
         className="hljs"
         dangerouslySetInnerHTML={{
