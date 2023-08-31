@@ -6,20 +6,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { CopyBlock, dracula } from "react-code-blocks";
+import xml from "highlight.js/lib/languages/xml";
 import { Helmet } from "react-helmet-async";
+import CodeBlock from "../components/CodeBlock";
 
 export const Page = () => {
-  const sampleFetch = `
-  <fetch mapping="logical" top="1" distinct="false" >\n
-    <entity name="savedquery" >
-      <attribute name="name" />
-      <filter type="and" >
-        <condition attribute="name" operator="like" value="%Account%" />\n
-      </filter>
-    </entity>
-  </fetch>
-  `;
   return (
     <>
       <Helmet>
@@ -86,7 +77,19 @@ export const Page = () => {
                   As we saw in the previous example, we can leverage the
                   workflow entity to get the states of all of our Flows.
                 </Typography>
-                <CopyBlock theme={dracula}></CopyBlock>
+                <CodeBlock
+                  code={`
+                    <fetch mapping="logical" top="1" distinct="false" >
+                      <entity name="savedquery" >
+                        <attribute name="name" />
+                        <filter type="and" >
+                          <condition attribute="name" operator="like" value="%Account%" />
+                        </filter>
+                      </entity>
+                    </fetch>`}
+                  language={xml}
+                  languageName="xml"
+                />
               </Container>
               <Container>
                 <Typography
