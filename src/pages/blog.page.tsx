@@ -16,9 +16,9 @@ import { Helmet } from "react-helmet-async";
 export const Page = () => {
   const blogPosts = [
     {
-      name: "Helpful Dataverse Queries",
-      description: "A collection of helpful Dataverse Fetch XML queries",
-      ref: "/blogs/helpful-dataverse-queries",
+      name: "How does the Dataverse Trigger Work?",
+      description: "",
+      ref: "/blogs/how-does-the-dataverse-trigger-work",
     },
     {
       name: "Blog Post 2",
@@ -52,13 +52,13 @@ export const Page = () => {
             >
               {blogPosts.map((item, index) => (
                 <Grid item direction={"row"} key={index}>
-                  <Card sx={{ width: 345, height: 300 }}>
+                  <Card sx={{ width: 345, height: 280 }}>
                     <CardMedia
                       sx={{ height: 140 }}
                       image="/src/assets/computost.svg"
                       title={item.name}
                     />
-                    <CardContent>
+                    <CardContent sx={{ height: 54 }}>
                       <Typography gutterBottom variant="h5" component="div">
                         {item.name}
                       </Typography>
