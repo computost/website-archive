@@ -1,7 +1,7 @@
 import type { LanguageFn } from "highlight.js";
 import hljs from "highlight.js/lib/core";
 import { FunctionComponent } from "react";
-import "highlight.js/styles/github.css";
+import "highlight.js/styles/github-dark.css";
 import outdent from "../util/outdent";
 
 const CodeBlock: FunctionComponent<{
