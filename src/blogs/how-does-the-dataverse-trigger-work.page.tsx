@@ -83,6 +83,7 @@ export const Page = () => {
                               <attribute name="statuscode" />
                               <attribute name="createdon" />
                               <attribute name="modifiedon" />
+                              <order attribute="createdon" descending="true" />
                               <filter>
                                 <!--Category-->
                                 <!--0: Workflow-->
@@ -111,6 +112,47 @@ export const Page = () => {
                   in the Dataverse Trigger. That is because the details are 
                   stored in a different entity called "callbackregistration".
                 </Typography>
+                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
+                  Here is a simple query to fetch all callbackregistrations. Unfortunately 
+                  it's not possible to link them to their Flow. However, this view is still helpful 
+                  when searching for automated functionality.
+                </Typography>
+                <CodeBlock
+                  code={`
+                          <fetch>
+                            <entity name="callbackregistration" >
+                              <!--Message-->
+                              <!--1: Added-->
+                              <!--2: Deleted-->
+                              <!--3: Modified-->
+                              <!--4: Added or Modified-->
+                              <!--5: Added or Deleted-->
+                              <!--6: Modified or Deleted-->
+                              <!--7: Added or Modified or Deleted-->
+                              <attribute name="message" />
+                              <attribute name="entityname" />
+                              <!--Scope-->
+                              <!--1: User-->
+                              <!--2: BusinessUnit-->
+                              <!--3: ParentChildBusinessUnit-->
+                              <!--4: Organization-->
+                              <attribute name="scope" />
+                              <attribute name="filterexpression" />
+                              <attribute name="filteringattributes" />
+                              <attribute name="postponeuntil" />
+                              <!--Run As-->
+                              <!--1: Modifying user-->
+                              <!--2: Row owner-->
+                              <!--3: Flow owner-->
+                              <attribute name="runas" />
+                              <attribute name="createdon" />
+                              <attribute name="modifiedon" />
+                              <order attribute="createdon" descending="true" />
+                            </entity>
+                          </fetch>`}
+                  language={xml}
+                  languageName="xml"
+                />
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
                   The state of a Dataverse Trigger Flow does not mean much
                   if there isn't an accompanying callbackregistration record. 

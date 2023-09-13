@@ -1,14 +1,18 @@
 /* This file was from the Gatsby website */
 
 html {
-  background-color: #fcecd1;
-  color: #211500;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+    height: 100vh;
 }
 
 body {
   margin: 0;
+  height: 100vh;
+}
+
+.rootStyles {
+  height: 100vh;
 }
 
 a:link {

@@ -4,7 +4,7 @@ import {
   Divider,
   Grid,
   Link,
-  List,
+  Paper,
   Stack,
   Typography,
 } from "@mui/material";
@@ -16,30 +16,41 @@ export const Page = () => (
       <title>Computost Consulting - Home</title>
     </Helmet>
     <Box>
-      <List>
-        <Container sx={{ marginBottom: "2em" }}>
-          <Typography variant="h4" sx={{ textAlign: "center" }}>
-            About Us
-          </Typography>
-          <Divider
-            orientation="horizontal"
-            flexItem
-            sx={{ marginBottom: "1em" }}
-          />
-          <Typography paragraph variant="body1">
-            We are a small team of software engineering consultants who
-            specialize in Power Platform and Azure technologies. Our team
-            members have an average of 15 years of experience working with Power
-            Platform and Microsoft technologies. In our careers, we have helped
-            build large, enterprise projects or provide guidance to small teams
-            with simple goals.
-          </Typography>
-        </Container>
-        <Container sx={{ marginBottom: "2em" }}>
-          <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
-            <Grid item sx={{ marginBottom: "2em" }}>
-              <Container maxWidth="xs">
-                <Typography variant="h4" sx={{ textAlign: "center" }}>
+      <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
+        <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+          <Container sx={{ padding: "1em" }}>
+            <Typography
+              gutterBottom
+              variant="h4"
+              sx={{ textAlign: "center" }}
+              color="primary"
+            >
+              About Us
+            </Typography>
+            <Divider
+              orientation="horizontal"
+              flexItem
+              sx={{ marginBottom: "1em" }}
+            />
+            <Typography paragraph variant="body1">
+              We are a small team of software engineering consultants who
+              specialize in Power Platform and Azure technologies. Our team
+              members have an average of 15 years of experience working with
+              Power Platform and Microsoft technologies. In our careers, we have
+              helped build large, enterprise projects or provide guidance to
+              small teams with simple goals.
+            </Typography>
+          </Container>
+        </Paper>
+        <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
+          <Grid item>
+            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+              <Container maxWidth="xs" sx={{ padding: "1em" }}>
+                <Typography
+                  variant="h4"
+                  sx={{ textAlign: "center" }}
+                  color="primary"
+                >
                   Our Principals
                 </Typography>
                 <Divider
@@ -52,6 +63,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Quality
                     </Typography>
@@ -65,6 +77,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Communication
                     </Typography>
@@ -77,6 +90,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Maintainability
                     </Typography>
@@ -89,6 +103,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Flexibility
                     </Typography>
@@ -100,10 +115,16 @@ export const Page = () => (
                   </Container>
                 </Stack>
               </Container>
-            </Grid>
-            <Grid item sx={{ marginBottom: "2em"}}>
-              <Container fixed maxWidth="xs">
-                <Typography variant="h4">
+            </Paper>
+          </Grid>
+          <Grid item>
+            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+              <Container fixed maxWidth="xs" sx={{ padding: "1em" }}>
+                <Typography
+                  variant="h4"
+                  sx={{ textAlign: "center" }}
+                  color="primary"
+                >
                   Technologies
                 </Typography>
                 <Divider
@@ -116,6 +137,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Power Platform
                     </Typography>
@@ -135,6 +157,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       Azure
                     </Typography>
@@ -157,6 +180,7 @@ export const Page = () => (
                     <Typography
                       variant="h5"
                       sx={{ fontWeight: 700, textAlign: "center" }}
+                      color="primary.light"
                     >
                       DevOps
                     </Typography>
@@ -174,10 +198,16 @@ export const Page = () => (
                   </Stack>
                 </Stack>
               </Container>
-            </Grid>
-            <Grid item sx={{ marginBottom: "2em" }}>
-              <Container maxWidth="xs">
-                <Typography variant="h4" sx={{ textAlign: "center" }}>
+            </Paper>
+          </Grid>
+          <Grid item sx={{ marginBottom: "2em" }}>
+            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+              <Container maxWidth="xs" sx={{ padding: "1em" }}>
+                <Typography
+                  variant="h4"
+                  sx={{ textAlign: "center" }}
+                  color="primary"
+                >
                   Projects
                 </Typography>
                 <Divider
@@ -205,9 +235,9 @@ export const Page = () => (
                   </li>
                 </ul>
               </Container>
-            </Grid>
+            </Paper>
           </Grid>
-        </Container>
+        </Grid>
         <Container sx={{ textAlign: "center" }}>
           <p>
             Contact us at{" "}
@@ -216,7 +246,7 @@ export const Page = () => (
             </a>
           </p>
         </Container>
-      </List>
+      </Grid>
     </Box>
   </>
 );

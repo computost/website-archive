@@ -36,7 +36,7 @@ export const render = ({ Page, pageProps }: PageContext) => {
               <>{helmetContext.helmet.title.toComponent()}</>
             </head>
             <body>
-              <div id="root" dangerouslySetInnerHTML={{ __html: page }} />
+              <div id="root" dangerouslySetInnerHTML={{ __html: page }} className="rootStyles"/>
             </body>
           </html>
         </StrictMode>
