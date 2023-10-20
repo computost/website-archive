@@ -17,7 +17,7 @@ export const Page = () => (
     </Helmet>
     <Box>
       <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
-        <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+        <Paper variant="outlined" sx={{ margin: "1em" }}>
           <Container sx={{ padding: "1em" }}>
             <Typography
               gutterBottom
@@ -37,14 +37,65 @@ export const Page = () => (
               specialize in Power Platform and Azure technologies. Our team
               members have an average of 15 years of experience working with
               Power Platform and Microsoft technologies. In our careers, we have
-              helped build large, enterprise projects or provide guidance to
-              small teams with simple goals.
+              provided consulting to help build large enterprise projects.
             </Typography>
           </Container>
         </Paper>
         <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
           <Grid item>
-            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+            <Paper variant="outlined" sx={{ margin: "1em" }}>
+              <Container maxWidth="sm" sx={{ padding: "1em" }}>
+                <Typography
+                  gutterBottom
+                  variant="h4"
+                  sx={{ textAlign: "center" }}
+                  color="primary"
+                >
+                  The Co-op Vision
+                </Typography>
+                <Divider
+                  orientation="horizontal"
+                  flexItem
+                  sx={{ marginBottom: "1em" }}
+                />
+                <Typography paragraph variant="body1">
+                  Computost is a cooperative governed by a working agreement tailored to
+                  maximize dividing business responsibilities and profits to its members. 
+                  Our vision is to create an inclusive democratic workplace for software consultants.
+                </Typography>
+                <Link href="/coop">Read more about cooperatives</Link>
+              </Container>
+            </Paper>
+          </Grid>
+          <Grid item>
+            <Paper variant="outlined" sx={{ margin: "1em" }}>
+              <Container maxWidth="sm" sx={{ padding: "1em" }}>
+                <Typography
+                  gutterBottom
+                  variant="h4"
+                  sx={{ textAlign: "center" }}
+                  color="primary"
+                >
+                  Services
+                </Typography>
+                <Divider
+                  orientation="horizontal"
+                  flexItem
+                  sx={{ marginBottom: "1em" }}
+                />
+                <Typography paragraph variant="body1">
+                Computost provides software consulting services at a competitive hourly rate. 
+                We have highly skilled and experienced developers. Our experience is primarily 
+                with Microsoft products but our services are not limited to Microsoft products.
+                </Typography>
+                <Link href="/services">Read more about our services</Link>
+              </Container>
+            </Paper>
+          </Grid>
+        </Grid>
+        <Grid container direction={"row"} wrap={"wrap"} justifyContent="center">
+          <Grid item>
+            <Paper variant="outlined" sx={{ margin: "1em" }}>
               <Container maxWidth="xs" sx={{ padding: "1em" }}>
                 <Typography
                   variant="h4"
@@ -118,7 +169,7 @@ export const Page = () => (
             </Paper>
           </Grid>
           <Grid item>
-            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+            <Paper variant="outlined" sx={{ margin: "1em" }}>
               <Container fixed maxWidth="xs" sx={{ padding: "1em" }}>
                 <Typography
                   variant="h4"
@@ -201,7 +252,7 @@ export const Page = () => (
             </Paper>
           </Grid>
           <Grid item sx={{ marginBottom: "2em" }}>
-            <Paper elevation={2} variant="outlined" sx={{ margin: "1em" }}>
+            <Paper variant="outlined" sx={{ margin: "1em" }}>
               <Container maxWidth="xs" sx={{ padding: "1em" }}>
                 <Typography
                   variant="h4"
@@ -238,14 +289,6 @@ export const Page = () => (
             </Paper>
           </Grid>
         </Grid>
-        <Container sx={{ textAlign: "center" }}>
-          <p>
-            Contact us at{" "}
-            <a href="mailto:consulting@computost.com">
-              consulting@computost.com
-            </a>
-          </p>
-        </Container>
       </Grid>
     </Box>
   </>

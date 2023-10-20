@@ -3,8 +3,10 @@ import { ReactComponent as ComputostLogo } from "./assets/computost.svg";
 import {
   AppBar,
   Box,
+  Container,
   Drawer,
   IconButton,
+  Link,
   ListItem,
   ListItemButton,
   ListItemIcon,
@@ -15,7 +17,7 @@ import {
   Typography,
   createTheme,
 } from "@mui/material";
-import { Book, Menu, Home } from "@mui/icons-material";
+import { Book, Menu, Home, People, BusinessCenter } from "@mui/icons-material";
 
 export const Template: FunctionComponent<PropsWithChildren> = ({
   children,
@@ -37,6 +39,8 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
   const data = [
     { name: "Home", icon: <Home />, ref: "/" },
     { name: "Blog", icon: <Book />, ref: "/blog" },
+    { name: "Co-op Info", icon: <People />, ref: "/coop" },
+    { name: "Services", icon: <BusinessCenter />, ref: "/services" },
   ];
   const [open, setOpen] = useState(false);
   const getList = () => (
@@ -95,6 +99,14 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
             </Drawer>
           </Box>
           <main style={{ padding: 8 }}>{children}</main>
+          <Container sx={{ textAlign: "center", padding: "0.5em" }}>
+            <p>
+              Contact us at{" "}
+              <Link href="mailto:consulting@computost.com">
+                consulting@computost.com
+              </Link>
+            </p>
+          </Container>
         </Paper>
       </ThemeProvider>
     </>

@@ -21,7 +21,7 @@ export const Page = () => {
       <Box>
         <List>
           <Container sx={{ marginBottom: "2em" }}>
-            <Typography variant="h4">
+            <Typography variant="h4" color="primary">
               How does the Dataverse Trigger Work?
             </Typography>
             <Divider
@@ -31,7 +31,10 @@ export const Page = () => {
             />
             <Stack spacing={5}>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="subtitle2" sx={{ marginBottom: "1em" }} color="primary.light">
+                  By Dalton - 9/13/2023
+                </Typography>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   Purpose
                 </Typography>
                 <Typography variant="body1">
@@ -42,17 +45,19 @@ export const Page = () => {
                   isn't the most user friendly at times. Users of the Dataverse
                   Trigger need to have intimate knowledge of Dataverse
                   entities, relationships, fields and much more to use the
-                  trigger effectively. This blog article aims to help demystify 
-                  the Dataverse Trigger.
+                  trigger effectively. Even greater knowledge is needed to troubleshoot 
+                  if there are issues. This blog article aims to demystify 
+                  the functionality leveraged to make the Dataverse Trigger function.
                 </Typography>
               </Container>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   How are Dataverse Flows stored in Dataverse?
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
-                  Flows are stored in the database under the name "workflow". If
-                  the org you are working in contains hundreds of flows, and you
+                  Flows are stored in the database under the name "workflow". Any Flow, 
+                  regardless of it's trigger will be stored in this entity. 
+                  If the org you are working in contains hundreds of flows, and you
                   want to search for a specific Flow based on a string you know
                   it contains, you can use the following fetch to do so.
                 </Typography>
@@ -101,9 +106,18 @@ export const Page = () => {
                   language={xml}
                   languageName="xml"
                 />
+                <Typography variant="body1" sx={{ margin: "1em" }}>
+                  To get the list of Flows that use the Dataverse Trigger, use the Dataverse Trigger 
+                  Operation Id of "SubscribeWebhookTrigger"
+                </Typography>
+                <CodeBlock
+                  code={`<condition attribute="clientdata" operator="like" value="%SubscribeWebhookTrigger%" />`}
+                  language={xml}
+                  languageName="xml"
+                />
               </Container>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   Where are Dataverse Triggers Stored in Dataverse?
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
@@ -185,12 +199,11 @@ export const Page = () => {
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
                   Unlike the HTTP Trigger, the Dataverse Trigger does not display the endpoint 
-                  in the Flow designer after creation. It's not impossible to get the url though. 
-                  It's available if you analyze the network traffic when viewing the Flow execution history. 
+                  in the Flow designer after creation.
                 </Typography>
               </Container>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   How does Dataverse Know When an Event Occurs?
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
@@ -216,11 +229,8 @@ export const Page = () => {
                 </Typography>
               </Container>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   Can you change a Callbackregistration url to any url?
-                </Typography>
-                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
-                  TLDR yes, you can.
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
                   The url field on a callbackregistration record can be updated but other fields are required in the update. 
@@ -232,17 +242,34 @@ export const Page = () => {
                   Dataverse Flow but the HTTP Flow. If you examine the message sent from Dataverse you'll notice it contains a few extra fields (ItemInternalId, 
                   SdkMessage, RunAsSystemUserId, and RowVersion). 
                 </Typography>
-                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
-                  If Dataverse can call any url, it may be possible any client can call the Dataverse Flow.
-                </Typography>
               </Container>
               <Container>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
                   Can you Trigger a Dataverse Trigger from PostMan?
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: "1em" }}>
-                  We saw additional fields were added by Dataverse to the Trigger. There were also headers included in the Post. These additional fields and headers 
-                  may or may not be required. It's time to put it to the test.
+                  First you would need to get the url used when the callbackregistration record was created. The url isn't valid for read so 
+                  you would need to get it before the record is created. Unfortunatley Dataverse does not allow you to create a Pre-validation 
+                  or Pre-operation Plugin Step on the callbackregistration entity.
+                </Typography>
+                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
+                  There is a PowerAutomate Management Connector Step called List Callback URL that works well for HTTP triggers. That also does 
+                  not work. It returns with "The list callback url operation is blocked for triggers of type 'OpenApiConnectionWebhook'".
+                </Typography>
+                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
+                  We do have the body and headers Dataverse uses to call the endpoint but not the endpoint itself. If you could somehow get it, 
+                  it should technically be possible to trigger the Dataverse Flow using a tool like Postman. Microsoft has done a good job of 
+                  locking down Dataverse Trigger urls. 
+                </Typography>
+              </Container>
+              <Container>
+                <Typography variant="h5" sx={{ fontWeight: 700 }} color="primary.light">
+                  Conclusion
+                </Typography>
+                <Typography variant="body1" sx={{ marginBottom: "1em" }}>
+                  We do have the body and headers Dataverse uses to call the endpoint but not the endpoint itself. If you could somehow get it, 
+                  it should technically be possible to trigger the Dataverse Flow using a tool like Postman. Microsoft has done a good job of 
+                  locking down Dataverse Trigger urls. 
                 </Typography>
               </Container>
             </Stack>

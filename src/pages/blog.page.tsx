@@ -51,7 +51,7 @@ export const Page = () => {
               justifyContent="center"
             >
               {blogPosts.map((item, index) => (
-                <Grid item direction={"row"} key={index}>
+                <Grid item key={index}>
                   <Card sx={{ width: 345, height: 280 }}>
                     <CardMedia
                       sx={{ height: 140 }}
