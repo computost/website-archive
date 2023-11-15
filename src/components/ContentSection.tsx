@@ -3,9 +3,10 @@ import { FunctionComponent, ReactNode } from "react";
 
 const ContentSection: FunctionComponent<{
   title?: string;
+  subTitle?: string;
   content?: string;
   children?: ReactNode;
-}> = ({ title, content, children }) => {
+}> = ({ title, subTitle, content, children }) => {
   return (
     <Container sx={{mb: 2}}>
       <Stack direction={"column"} spacing={1}>
@@ -16,6 +17,15 @@ const ContentSection: FunctionComponent<{
             color="primary.light"
           >
             {title}
+          </Typography>
+        )}
+        {subTitle && (
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 500 }}
+            color="primary.light"
+          >
+            {subTitle}
           </Typography>
         )}
         {content && <Typography variant="body1">{content}</Typography>}
