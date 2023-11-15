@@ -1,4 +1,4 @@
-import { Box, Container, List, Stack, Typography } from "@mui/material";
+import { Box, Container, List, Stack } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import PageHeader from "../components/PageHeader";
 import ContentSection from "../components/ContentSection";
