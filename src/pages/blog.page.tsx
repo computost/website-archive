@@ -20,11 +20,6 @@ export const Page = () => {
       description: "",
       ref: "/blogs/how-does-the-dataverse-trigger-work",
     },
-    {
-      name: "Blog Post 2",
-      description: "This is the description for blog post 2",
-      ref: "/blogs/blogPost2",
-    },
   ];
   return (
     <>
@@ -62,7 +57,11 @@ export const Page = () => {
                       <Typography gutterBottom variant="h5" component="div">
                         {item.name}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{height: 40}}>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ height: 40 }}
+                      >
                         {item.description}
                       </Typography>
                     </CardContent>
