@@ -4,9 +4,11 @@ import {
   Link,
   Paper,
   ThemeProvider,
+  Typography,
   createTheme,
 } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import CookiePopup from "./components/CookiePopup";
 
 export const Template: FunctionComponent<PropsWithChildren> = ({
   children,
@@ -36,12 +38,16 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
           <ResponsiveAppBar />
           <main style={{ padding: 8 }}>{children}</main>
           <Container sx={{ textAlign: "center", padding: "0.5em" }}>
-            <p>
+            <Typography variant="subtitle1" sx={{marginBottom: 1}}>
               Contact us at{" "}
               <Link href="mailto:consulting@computost.com">
                 consulting@computost.com
               </Link>
-            </p>
+            </Typography>
+            <Typography variant="subtitle2">
+              Copyright © 2023 Computost Consulting, LLC
+            </Typography>
+            <CookiePopup />
           </Container>
         </Paper>
       </ThemeProvider>
