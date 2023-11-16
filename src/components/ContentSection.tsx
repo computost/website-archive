@@ -1,19 +1,30 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, Stack, SxProps, Theme, Typography } from "@mui/material";
 import { FunctionComponent, ReactNode } from "react";
 
 const ContentSection: FunctionComponent<{
+  containerSx?: SxProps<Theme>;
   title?: string;
+  titleSx?: SxProps<Theme>;
   subTitle?: string;
   content?: string;
+  contentSx?: SxProps<Theme>;
   children?: ReactNode;
-}> = ({ title, subTitle, content, children }) => {
+}> = ({
+  containerSx,
+  title,
+  titleSx,
+  subTitle,
+  content,
+  contentSx,
+  children,
+}) => {
   return (
-    <Container sx={{mb: 2}}>
+    <Container sx={containerSx ?? {mb: 2}}>
       <Stack direction={"column"} spacing={1}>
         {title && (
           <Typography
             variant="h5"
-            sx={{ fontWeight: 700 }}
+            sx={titleSx ?? {fontWeight: 700 }}
             color="primary.light"
           >
             {title}
@@ -28,7 +39,11 @@ const ContentSection: FunctionComponent<{
             {subTitle}
           </Typography>
         )}
-        {content && <Typography variant="body1">{content}</Typography>}
+        {content && (
+          <Typography variant="body1" sx={contentSx}>
+            {content}
+          </Typography>
+        )}
         {children}
       </Stack>
     </Container>
