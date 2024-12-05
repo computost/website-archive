@@ -20,7 +20,7 @@ export const Page = () => {
             <PageHeader title={"Co-op Info"} />
             <Stack spacing={3}>
               <ContentSection
-                title={"Why a Co-op of Sofware Consultants?"}
+                title={"Why a Co-op of Software Consultants?"}
                 content={`The founding members of Computost have spent the majority of
                 their professional careers in the software consulting
                 industry. In consulting it's not difficult to determine how
@@ -34,7 +34,7 @@ export const Page = () => {
                 problems Computost aims to fix as a cooperative.`}
               />
               <ContentSection
-                title={"Our Co-op Priniciples"}
+                title={"Our Co-op Principles"}
                 content={`There are an infinite number of ways to run a cooperative. 
                 We have chosen the following principles to run Computost by:`}
               />

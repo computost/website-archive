@@ -29,7 +29,6 @@ const ResponsiveAppBar: FunctionComponent<{}> = () => {
 
   const data = [
     { name: "Home", ref: "/" },
-    { name: "Blog", ref: "/blog" },
     { name: "Co-op Info", ref: "/coop" },
     { name: "Services", ref: "/services" },
   ];
