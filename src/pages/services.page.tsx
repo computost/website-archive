@@ -40,7 +40,7 @@ export const Page = () => {
                 title={"Mission Driven Consulting Services"}
                 content={`Not all projects that provide value to the greater community
                 have the capital to hire a team of developers to build and
-                support their product. Computost has a special type of service
+                support their product. Computost provides a service
                 called "Mission Driven" which gives projects, that we see as
                 highly beneficial to the community, with low or non existent
                 funding an opportunity to be created and provide value.`}
@@ -48,10 +48,10 @@ export const Page = () => {
               <ContentSection
                 content={`If Computost members collectively agree to take on a Mission
                 Driven project, we will work with the client to make their
-                product a reality. An hourly rate will be decided upon. Hours
-                spent will be tracked. After the product is created, if the
-                product generates revenue, payments over time will be made to
-                eventually pay off the effort spent to create the product.`}
+                product a reality. An hourly rate is decided upon. Hours
+                spent are tracked. After the product is created, if the
+                product generates revenue, payments over time based on profits 
+                are made to eventually pay off the effort spent to create the product.`}
               />
               <Paper elevation={0} sx={{ margin: "1em" }}>
                 <Stack direction={"column"} justifyContent={"center"}>
@@ -60,7 +60,7 @@ export const Page = () => {
                     color="primary.light"
                     sx={{ textAlign: "center", marginTop: 1, fontWeight: 700 }}
                   >
-                    Service Details
+                    Available Services
                   </Typography>
                   <Divider
                     sx={{ marginBottom: 1, marginTop: 1 }}
@@ -72,9 +72,8 @@ export const Page = () => {
                     sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
                   >
                     <ContentSection
-                    containerSx={{ marginBottom: 1, marginTop: 1 }}
+                    containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
                       subTitle={"New Application Development"}
-                      content={"Integrations to and or from new applications"}
                     />
                   </Paper>
                   <Paper
@@ -82,7 +81,7 @@ export const Page = () => {
                     sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
                   >
                     <ContentSection
-                      containerSx={{ marginBottom: 1, marginTop: 1 }}
+                      containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
                       subTitle={"Enhancements to Existing Applications"}
                     />
                   </Paper>
@@ -91,8 +90,8 @@ export const Page = () => {
                     sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
                   >
                     <ContentSection
-                      containerSx={{ marginBottom: 1, marginTop: 1 }}
-                      subTitle={"Reviews of Existing Applications"}
+                      containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
+                      subTitle={"Code Reviews of Existing Applications"}
                     />
                   </Paper>
                   <Paper
@@ -100,7 +99,7 @@ export const Page = () => {
                     sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
                   >
                     <ContentSection
-                      containerSx={{ marginBottom: 1, marginTop: 1 }}
+                      containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
                       subTitle={"Deployment and Infrastructure Configuration"}
                     />
                   </Paper>
@@ -109,11 +108,18 @@ export const Page = () => {
                     sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
                   >
                     <ContentSection
-                      containerSx={{ marginBottom: 1, marginTop: 1 }}
+                      containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
+                      subTitle={"Real Time Data Integrations"}
+                    />
+                  </Paper>
+                  <Paper
+                    elevation={1}
+                    sx={{ marginLeft: 1, marginRight: 1, marginBottom: 0.5 }}
+                  >
+                    <ContentSection
+                      containerSx={{ marginBottom: 1, marginTop: 1, textAlign: "center" }}
                       subTitle={"Workshops"}
                       contentSx={{ whiteSpace: "pre-wrap" }}
-                      content={`Automated Deployments
-Test Driven Development`}
                     />
                   </Paper>
                 </Stack>
@@ -132,12 +138,7 @@ Test Driven Development`}
                     sx={{ marginBottom: 1, marginTop: 1 }}
                     variant="middle"
                   />
-                  <Grid
-                    container
-                    //direction={"column"}
-                    //wrap={"wrap"}
-                    //justifyContent="center"
-                  >
+                  <Grid container>
                     <Grid item>
                       <ContentSection
                         title={"Lanaguages"}
@@ -160,6 +161,7 @@ Ruby
                         content={`Webpack
 React
 Vite
+Blazor
 MaterialUI
 FluentUI
                 `}
@@ -170,20 +172,8 @@ FluentUI
                         title={"Microsoft"}
                         contentSx={{ whiteSpace: "pre-wrap" }}
                         content={`Power Platform
-Azure DevOps
-API Management
-Microsoft SQL Server
-Azure Function App
-Azure Cosmos
-Kusto
-Azure Data Factory
-Synapse
-Data Lake
-Data Bricks
-Azure Web Apps 
-Azure Kubernetes Service (AKS)
-SSIS
-SSRS
+Azure
+Business Central
                 `}
                       />
                     </Grid>
@@ -191,8 +181,9 @@ SSRS
                       <ContentSection
                         title={"Github"}
                         contentSx={{ whiteSpace: "pre-wrap" }}
-                        content={`Github Workflows
-Actions`}
+                        content={`Workflows
+Actions
+Repo Management`}
                       />
                     </Grid>
                     <Grid item>
@@ -202,6 +193,13 @@ Actions`}
                         content={`Firebase
 Google Cloud Storage
                 `}
+                      />
+                    </Grid>
+                    <Grid item>
+                      <ContentSection
+                        title={"CMS Systems"}
+                        contentSx={{ whiteSpace: "pre-wrap" }}
+                        content={`Umbraco 13`}
                       />
                     </Grid>
                   </Grid>

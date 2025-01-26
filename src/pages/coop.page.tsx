@@ -23,15 +23,18 @@ export const Page = () => {
                 title={"Why a Co-op of Software Consultants?"}
                 content={`The founding members of Computost have spent the majority of
                 their professional careers in the software consulting
-                industry. In consulting it's not difficult to determine how
-                much the company values you. Most often you know the rate that
-                is being billed for your time. You know how much time you are
-                billing and what you are being paid. It's a straightforward
-                calculation to determine the percentage being distributed to
-                you. Most of the time it's not where you would want it to be.
-                In a standard company there's no knowing how the remainder of
-                the profits you earned are being used. This is one of the
-                problems Computost aims to fix as a cooperative.`}
+                industry. Consulting can be difficult for some as the hourly 
+                rate is often known by the developer. Knowing the billed rate and pay rate can 
+                lead some to wonder where the difference is going. Usually, the developers 
+                entering billable hours are far removed from the discussion of where the profits 
+                generated from their effort is allocated. This is one of the core 
+                problems Computost aims to fix as a cooperative. The projects Computost takes and how 
+                profit is distributed are decided by the members.`}
+              />
+              <ContentSection
+                content={`We strive to create an environment where developers 
+                have the chance to do positive, meaningful, work and are compensated 
+                fairly based on their patronage.`}
               />
               <ContentSection
                 title={"Our Co-op Principles"}
@@ -49,15 +52,18 @@ export const Page = () => {
               />
               <ContentSection
                 subTitle={`No Hierarchy`}
-                content={`There are no managers. All members have the same level and authority 
+                content={`There are no managers. All members have the same level of authority 
                 and autonomy.`}
               />
               <ContentSection
-                subTitle={`Patronage Based Compensation`}
-                content={`Every member receives the same base salary, decided by members. 
-                In addition to salary, surplus is distributed to members on a cadence 
-                decided by members. The percentage of surplus distributed to members is equal to 
-                their patronage, which is currently defined as hours worked in the time period.`}
+                subTitle={`Shared Profits and Losses`}
+                content={`Surplus from billable work is divided based on patronage, which is 
+                  defined by billable hours worked in a period of time. If times are busy and there is 
+                  a lot of work, we all share the benefits based on our contribution.`}
+              />
+              <ContentSection
+                content={`On the other hand, if billable work is in limited supply, it will be felt by all 
+                  and provide incentive for all members to contribute to the cooperative.`}
               />
             </Stack>
           </Container>

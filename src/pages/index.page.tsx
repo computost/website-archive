@@ -85,7 +85,7 @@ export const Page = () => (
                 />
                 <Typography paragraph variant="body1">
                 Computost provides software consulting services at a competitive hourly rate. 
-                We have highly skilled and experienced developers. Our experience is primarily 
+                All members are highly skilled and experienced developers. Our experience is primarily 
                 with Microsoft products but our services are not limited to Microsoft products.
                 </Typography>
                 <Link href="/services">Read more about our services</Link>
@@ -274,8 +274,7 @@ export const Page = () => (
                   >
                     While we work with customers, we often innovate tools that
                     can provide value for the larger software development
-                    community. Below are some of the tools we have created and
-                    actively maintain:
+                    community. Below are some of the tools we have created:
                   </Typography>
                 </Container>
                 <ul>

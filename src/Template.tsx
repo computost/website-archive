@@ -45,7 +45,7 @@ export const Template: FunctionComponent<PropsWithChildren> = ({
               </Link>
             </Typography>
             <Typography variant="subtitle2">
-              Copyright © 2023 Computost Consulting, LLC
+              Copyright © 2025 Computost Consulting, LLC
             </Typography>
             <CookiePopup />
           </Container>
