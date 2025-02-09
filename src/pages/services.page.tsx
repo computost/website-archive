@@ -141,7 +141,7 @@ export const Page = () => {
                   <Grid container>
                     <Grid item>
                       <ContentSection
-                        title={"Lanaguages"}
+                        title={"Languages"}
                         contentSx={{ whiteSpace: "pre-wrap" }}
                         content={`C#
 SQL
