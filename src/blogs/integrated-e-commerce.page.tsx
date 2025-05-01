@@ -44,6 +44,7 @@ export const Page = () => {
               </Typography>
             }
             component="ol"
+            role="navigation"
           >
             <ListItem>
               <Link href="#introduction">Part 1 - Introduction</Link>
