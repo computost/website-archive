@@ -2,7 +2,7 @@ import { Box, Container, Grid, List } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import BlogPostItem from "../components/BlogPostItem";
 import PageHeader from "../components/PageHeader";
-import blogPosts from "../blogs.json";
+import blogPosts from "../blog-posts.json";
 const typedBlogPosts: { "name": string, "description": string, "ref": string }[] = blogPosts;
 
 export const Page = () => {
