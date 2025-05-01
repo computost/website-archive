@@ -24,7 +24,7 @@ export const Page = () => {
         <Typography variant="h4" color="primary">
           Building a scalable e-commerce site backed by Dataverse
         </Typography>
-        <Typography variant="subtitle1" component="h3" color="primary">
+        <Typography variant="subtitle1" component="h5" color="primary">
           Exploring real time service integration
         </Typography>
         <Divider
@@ -37,36 +37,37 @@ export const Page = () => {
           <span rel="author">Joshua Hogsett</span>
         </Typography>
         <Stack spacing={5}>
-          <List
-            subheader={
-              <Typography variant="h6" color="primary.light">
-                Table of Contents
-              </Typography>
-            }
-            component="ol"
-            role="navigation"
-          >
-            <ListItem>
-              <Link href="#introduction">Part 1 - Introduction</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#requirements">Requirements</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#goals">Our Goals</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#design-considerations">Design Considerations</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#first-and-third-party-solution-options">
-                First and Third Party Solution Options
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#initial-design">Initial Design Decisions</Link>
-            </ListItem>
-          </List>
+          <Box component="nav">
+            <List
+              subheader={
+                <Typography variant="h6" color="primary.light">
+                  Table of Contents
+                </Typography>
+              }
+              component="ol"
+            >
+              <ListItem>
+                <Link href="#introduction">Part 1 - Introduction</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#requirements">Requirements</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#goals">Our Goals</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#design-considerations">Design Considerations</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#first-and-third-party-solution-options">
+                  First and Third Party Solution Options
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="#initial-design">Initial Design Decisions</Link>
+              </ListItem>
+            </List>
+          </Box>
           <Box component="section" id="introduction">
             <Typography variant="h6" color="primary.light">
               Part 1 - Introduction
