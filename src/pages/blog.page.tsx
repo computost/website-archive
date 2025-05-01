@@ -2,15 +2,10 @@ import { Box, Container, Grid, List } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import BlogPostItem from "../components/BlogPostItem";
 import PageHeader from "../components/PageHeader";
+import blogPosts from "../blogs.json";
+const typedBlogPosts: { "name": string, "description": string, "ref": string }[] = blogPosts;
 
 export const Page = () => {
-  const blogPosts = [
-    {
-      name: "How does the Dataverse Trigger Work?",
-      description: "",
-      ref: "/blogs/how-does-the-dataverse-trigger-work",
-    },
-  ];
   return (
     <>
       <Helmet>
@@ -28,7 +23,7 @@ export const Page = () => {
               wrap={"wrap"}
               justifyContent="center"
             >
-              {blogPosts.map((item, index) => (
+              {typedBlogPosts.map((item, index) => (
                 <Grid item key={index}>
                   <BlogPostItem
                     title={item.name}

@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
+import blogPosts from "../blogs.json";
 
 import { ReactComponent as ComputostLogo } from "../assets/computost.svg";
 
@@ -28,10 +29,13 @@ const ResponsiveAppBar: FunctionComponent<{}> = () => {
   };
 
   const data = [
-    { name: "Home", ref: "/" },
+    { name: "Home", ref: "/" }
+  ]
+  .concat(blogPosts.length > 0 ? [{ name: "Blog", ref: "/blog" }] : [])
+  .concat([
     { name: "Co-op Info", ref: "/coop" },
     { name: "Services", ref: "/services" },
-  ];
+  ]);
 
   const getAppBarList = () => (
     <div>
