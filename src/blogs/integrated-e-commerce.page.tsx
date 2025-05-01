@@ -38,14 +38,10 @@ export const Page = () => {
         </Typography>
         <Stack spacing={5}>
           <Box component="nav">
-            <List
-              subheader={
-                <Typography variant="h6" color="primary.light">
-                  Table of Contents
-                </Typography>
-              }
-              component="ol"
-            >
+            <Typography variant="h6" color="primary.light">
+              Table of Contents
+            </Typography>
+            <List component="ol">
               <ListItem>
                 <Link href="#introduction">Part 1 - Introduction</Link>
               </ListItem>
@@ -91,14 +87,10 @@ export const Page = () => {
               are the high level core features and desired website
               functionality.
             </Typography>
-            <List
-              subheader={
-                <Typography variant="body1">
-                  Requirements for Core Functionality
-                </Typography>
-              }
-              sx={{ listStyleType: "disc" }}
-            >
+            <Typography variant="body1">
+              Requirements for Core Functionality
+            </Typography>
+            <List sx={{ listStyleType: "disc" }}>
               <ListItem sx={{ display: "list-item" }}>
                 Read data from Dataverse and Business Central
               </ListItem>
@@ -127,14 +119,10 @@ export const Page = () => {
                 Custom pricing model based on user
               </ListItem>
             </List>
-            <List
-              subheader={
-                <Typography variant="body1">
-                  Requirements for Website Functionality
-                </Typography>
-              }
-              sx={{ listStyleType: "disc" }}
-            >
+            <Typography variant="body1">
+              Requirements for Website Functionality
+            </Typography>
+            <List sx={{ listStyleType: "disc" }}>
               <ListItem sx={{ display: "list-item" }}>
                 Feature rich product search and filtering for anonymous and
                 logged in users
@@ -182,14 +170,10 @@ export const Page = () => {
               environments. These changes could be infrastructure or business
               logic changes.
             </Typography>
-            <List
-              subheader={
-                <Typography variant="body1">
-                  To summarize, these were our teams goals and preferences:
-                </Typography>
-              }
-              sx={{ listStyleType: "disc" }}
-            >
+            <Typography variant="body1">
+              To summarize, these were our teams goals and preferences:
+            </Typography>
+            <List sx={{ listStyleType: "disc" }}>
               <ListItem sx={{ display: "list-item" }}>
                 The project can run and be tested locally.
               </ListItem>
@@ -274,16 +258,9 @@ export const Page = () => {
             <Typography variant="body1" sx={{ mb: 1 }}>
               The client was already within the Microsoft ecosystem. We reviewed
               the existing tools that could be used for different aspects of the
-              system.
+              system. Below are a few of the options we reviewed:
             </Typography>
-            <List
-              subheader={
-                <Typography variant="body1">
-                  Below are a few of the options we reviewed:
-                </Typography>
-              }
-              sx={{ listStyleType: "disc" }}
-            >
+            <List sx={{ listStyleType: "disc" }}>
               <ListItem sx={{ display: "list-item" }}>
                 FrontEnd:
                 <List sx={{ listStyleType: "disc" }}>
@@ -344,17 +321,12 @@ export const Page = () => {
             <Typography variant="h6" color="primary.light">
               Initial Design Decisions
             </Typography>
-            <List
-              subheader={
-                <Typography variant="body1">
-                  After reviewing the requirements from the client, our teams
-                  goals and preferences, issues we believe we’ll face and what
-                  first and third party tools are available, we made the
-                  following decisions:
-                </Typography>
-              }
-              sx={{ listStyleType: "disc" }}
-            >
+            <Typography variant="body1">
+              After reviewing the requirements from the client, our teams goals
+              and preferences, issues we believe we’ll face and what first and
+              third party tools are available, we made the following decisions:
+            </Typography>
+            <List sx={{ listStyleType: "disc" }}>
               <ListItem sx={{ display: "list-item" }}>
                 The site will need a dedicated database to get around api
                 limits. We’ll still use the Dataverse API for Create, Update and
