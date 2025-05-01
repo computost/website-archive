@@ -32,8 +32,41 @@ export const Page = () => {
           flexItem
           sx={{ marginBottom: "1em" }}
         />
+        <Typography variant="subtitle2" component="address">
+          Written By <span rel="author">Dalton Mackey</span> and{" "}
+          <span rel="author">Joshua Hogsett</span>
+        </Typography>
         <Stack spacing={5}>
-          <Box component="section">
+          <List
+            subheader={
+              <Typography variant="h6" color="primary.light">
+                Table of Contents
+              </Typography>
+            }
+            component="ol"
+          >
+            <ListItem>
+              <Link href="#introduction">Part 1 - Introduction</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#requirements">Requirements</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#goals">Our Goals</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#design-considerations">Design Considerations</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#first-and-third-party-solution-options">
+                First and Third Party Solution Options
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="#initial-design">Initial Design Decisions</Link>
+            </ListItem>
+          </List>
+          <Box component="section" id="introduction">
             <Typography variant="h6" color="primary.light">
               Part 1 - Introduction
             </Typography>
@@ -46,7 +79,7 @@ export const Page = () => {
               used DevOps to glue everything together.
             </Typography>
           </Box>
-          <Box component="section">
+          <Box component="section" id="requirements">
             <Typography variant="h6" color="primary.light">
               Requirements
             </Typography>
@@ -112,7 +145,7 @@ export const Page = () => {
               </ListItem>
             </List>
           </Box>
-          <Box component="section">
+          <Box component="section" id="goals">
             <Typography variant="h6" color="primary.light">
               Our Goals
             </Typography>
@@ -168,7 +201,7 @@ export const Page = () => {
               </ListItem>
             </List>
           </Box>
-          <Box component="section">
+          <Box component="section" id="design-considerations">
             <Typography variant="h6" color="primary.light">
               Design Considerations
             </Typography>
@@ -232,7 +265,7 @@ export const Page = () => {
               </ListItem>
             </List>
           </Box>
-          <Box component="section">
+          <Box component="section" id="first-and-third-party-solution-options">
             <Typography variant="h6" color="primary.light">
               First and Third Party Solution Options
             </Typography>
@@ -305,7 +338,7 @@ export const Page = () => {
               </ListItem>
             </List>
           </Box>
-          <Box component="section">
+          <Box component="section" id="initial-design">
             <Typography variant="h6" color="primary.light">
               Initial Design Decisions
             </Typography>
