@@ -37,7 +37,7 @@ export const Page = () => {
         />
         <Typography variant="subtitle2" component="address">
           Written By <span rel="author">Dalton Mackey</span> and{" "}
-          <span rel="author">Joshua Hogsett</span>
+          <span rel="author">Joshua Hogsett</span> on <time dateTime="2025-05-02">May 2nd, 2025</time>
         </Typography>
         <Stack spacing={3}>
           <Box component="nav">
