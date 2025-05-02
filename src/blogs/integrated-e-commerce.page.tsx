@@ -36,7 +36,7 @@ export const Page = () => {
           Written By <span rel="author">Dalton Mackey</span> and{" "}
           <span rel="author">Joshua Hogsett</span>
         </Typography>
-        <Stack spacing={5}>
+        <Stack spacing={3}>
           <Box component="nav">
             <Typography variant="h6" color="primary.light">
               Table of Contents
@@ -81,7 +81,7 @@ export const Page = () => {
             <Typography variant="h6" color="primary.light">
               Requirements
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               This project required us to develop a fully functional e-commerce
               site using Dataverse and Business Central as data sources. Below
               are the high level core features and desired website
@@ -90,25 +90,25 @@ export const Page = () => {
             <Typography variant="body1">
               Requirements for Core Functionality
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
               <ListItem sx={{ display: "list-item" }}>
                 Read data from Dataverse and Business Central
               </ListItem>
               <ListItem sx={{ display: "list-item" }}>
                 Write data to Dataverse
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Restful API for website related data and actions
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     Public access is not required now but is planned for the
                     future
                   </ListItem>
                 </List>
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Modification of Product Hierarchy
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     The Product hierarchy in Dataverse is not the desired
                     hierarchy for the site
@@ -122,7 +122,7 @@ export const Page = () => {
             <Typography variant="body1">
               Requirements for Website Functionality
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
               <ListItem sx={{ display: "list-item" }}>
                 Feature rich product search and filtering for anonymous and
                 logged in users
@@ -139,11 +139,11 @@ export const Page = () => {
             <Typography variant="h6" color="primary.light">
               Our Goals
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               Along with the business requirements, we, as the designers and
               developers, had our own requirements for this project.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               One of our primary goals is to set up a positive developer
               experience. We wanted the ability to develop, run, and test the
               entire application locally including emulating production
@@ -153,19 +153,19 @@ export const Page = () => {
               couldn’t use any low code / no code tools, which we were all in
               agreement that was for the best.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               We wanted to use the infrastructure-as-code approach. The goal was
               to have the ability to provision the application in a new
               environment with minimal manual intervention needed.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               Another goal was to make the application easy to support and
               quickly add new functionality with low risk of regression. We knew
               the company wouldn’t have a full dev team on hand to keep this
               application up and running. It needed to be resilient and provide
               a method to quickly diagnose and resolve issues.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               We also wanted a fast and reliable method to move changes between
               environments. These changes could be infrastructure or business
               logic changes.
@@ -173,7 +173,7 @@ export const Page = () => {
             <Typography variant="body1">
               To summarize, these were our teams goals and preferences:
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
               <ListItem sx={{ display: "list-item" }}>
                 The project can run and be tested locally.
               </ListItem>
@@ -191,7 +191,7 @@ export const Page = () => {
             <Typography variant="h6" color="primary.light">
               Design Considerations
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
               The largest concern we had was around Dataverse’s api limit. The
               public internet is now filled with AI web crawlers that will send
               thousands of requests per second to index every page of a site. We
@@ -201,17 +201,17 @@ export const Page = () => {
               would still be possible for real user traffic to use up the api
               limit.
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
-              <ListItem sx={{ display: "list-item" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Dataverse and Business Central API limitations
-                <List sx={{ listStyleType: "disc" }}>
-                  <ListItem sx={{ display: "list-item" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
+                  <ListItem sx={{ display: "list-item", pb: 0 }}>
                     If the site is directly querying Dataverse or Business
                     Central and traffic increases, it’s possible to hit the
                     environments’ API limits. If the limit is hit, the website's
                     application user accessing the api would receive 429 errors
                     for a short time, rendering the site inoperable.
-                    <List sx={{ listStyleType: "disc" }}>
+                    <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                       <ListItem sx={{ display: "list-item" }}>
                         <Link
                           href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits"
@@ -225,9 +225,9 @@ export const Page = () => {
                   </ListItem>
                 </List>
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 How to emulate a Dataverse or Business Central environment?
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     This is one component we knew was not something we could run
                     in a Docker container. We needed a way to emulate record
@@ -235,9 +235,9 @@ export const Page = () => {
                   </ListItem>
                 </List>
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Use of Dataverse / Power Platform Functionality
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     We could leverage Dataverse to handle creating orders, cart
                     items, and any other functionality that required modifying
@@ -255,15 +255,15 @@ export const Page = () => {
             <Typography variant="h6" color="primary.light">
               First and Third Party Solution Options
             </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
+            <Typography variant="body1">
               The client was already within the Microsoft ecosystem. We reviewed
               the existing tools that could be used for different aspects of the
               system. Below are a few of the options we reviewed:
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
-              <ListItem sx={{ display: "list-item" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 FrontEnd:
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     PowerPages - PowerPlatform has a way to quickly spin up a
                     publicly facing website directly connected to a Dataverse
@@ -276,9 +276,9 @@ export const Page = () => {
                   </ListItem>
                 </List>
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Writing to Dataverse:
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     Power Automate - Flows can be slow to start and run. They
                     are costly in time and effort to maintain, hard to
@@ -295,9 +295,9 @@ export const Page = () => {
                   </ListItem>
                 </List>
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 Read / Write / Transform Data:
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     Azure Data Factory / Azure Synapse - At best, Synapse has a
                     delay of 15 minutes, which makes it immediately a no-go for
@@ -326,13 +326,13 @@ export const Page = () => {
               and preferences, issues we believe we’ll face and what first and
               third party tools are available, we made the following decisions:
             </Typography>
-            <List sx={{ listStyleType: "disc" }}>
-              <ListItem sx={{ display: "list-item" }}>
+            <List sx={{ listStyleType: "disc", pl: 3 }}>
+              <ListItem sx={{ display: "list-item", pb: 0 }}>
                 The site will need a dedicated database to get around api
                 limits. We’ll still use the Dataverse API for Create, Update and
                 Delete requests but the number of those should be well within
                 the API limits.
-                <List sx={{ listStyleType: "disc" }}>
+                <List sx={{ listStyleType: "disc", pl: 3, pb: 0 }}>
                   <ListItem sx={{ display: "list-item" }}>
                     If Create, Update and Delete requests start to bump up
                     against API limits, we need a way to control it. We will
