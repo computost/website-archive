@@ -15,10 +15,13 @@ export const Page = () => {
     <>
       <Helmet>
         <title>
-          Computost Consulting - Building an integrated e-commerce site
+          Computost Consulting - Building a scalable e-commerce site backed by
+          Dataverse
         </title>
-        {/* TODO add a description for SEO */}
-        <meta name="description" content="describe me" />
+        <meta
+          name="description"
+          content="This article is an intro to a series covering our thoughts and processes on building an e-commerce site that's integrated with Microsoft Dataverse and Dynamics 365 Business Central"
+        />
       </Helmet>
       <Container sx={{ marginBottom: "2em" }} component="article">
         <Typography variant="h4" color="primary">
