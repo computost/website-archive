@@ -59,9 +59,10 @@ export const Page = () => (
                   sx={{ marginBottom: "1em" }}
                 />
                 <Typography paragraph variant="body1">
-                  Computost is a cooperative governed by a working agreement tailored to
-                  maximize dividing business responsibilities and profits to its members. 
-                  Our vision is to create an inclusive democratic workplace for software consultants.
+                  Computost is a cooperative governed by a working agreement
+                  tailored to maximize dividing business responsibilities and
+                  profits to its members. Our vision is to create an inclusive
+                  democratic workplace for software consultants.
                 </Typography>
                 <Link href="/coop">Read more about cooperatives</Link>
               </Container>
@@ -84,9 +85,11 @@ export const Page = () => (
                   sx={{ marginBottom: "1em" }}
                 />
                 <Typography paragraph variant="body1">
-                Computost provides software consulting services at a competitive hourly rate. 
-                All members are highly skilled and experienced developers. Our experience is primarily 
-                with Microsoft products but our services are not limited to Microsoft products.
+                  Computost provides software consulting services at a
+                  competitive hourly rate. All members are highly skilled and
+                  experienced developers. Our experience is primarily with
+                  Microsoft products but our services are not limited to
+                  Microsoft products.
                 </Typography>
                 <Link href="/services">Read more about our services</Link>
               </Container>
