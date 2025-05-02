@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import blogPosts from "../blogs.json";
+import blogPosts from "../blog-posts.json";
 
 import { ReactComponent as ComputostLogo } from "../assets/computost.svg";
 
