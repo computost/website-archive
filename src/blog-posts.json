@@ -1,7 +1,7 @@
 [
   {
-    "name": "Building an integrated e-commerce site",
-    "description": "",
+    "name": "Building a scalable e-commerce site backed by Dataverse",
+    "description": "This article is an intro to a series covering our thoughts and processes on building an e-commerce site that's integrated with Microsoft Dataverse and Dynamics 365 Business Central",
     "ref": "/blogs/integrated-e-commerce"
   }
 ]
